@@ -56,22 +56,22 @@ var regularP = function(p){
 
 //the shuffluePuzzle function is used to shullfe each puzzle on the page.
 function shuffle(){
-	var nArray = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+	var pArray = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 	for (var i=mypuzzle.length; i>0; i){
 		var j = Math.floor(Math.random() * i);
-		var x = nArray[--i];
-		var test = nArray[j];
+		var x = pArray[--i];
+		var test = pArray[j];
 		if(test == "0") { 
 			mypuzzle[i].addClassName("puzzlepiece");
 	 		blankPiece(mypuzzle[i]);
 	 		mypuzzle[i].innerHTML = "";
 					}
 		else{
-     			mypuzzle[i].innerHTML = nArray[j];
+     			mypuzzle[i].innerHTML = pArray[j];
       			regularP(mypuzzle[i]);
       			backgroundPos(mypuzzle[i], test);
           }
-			nArray[j] = x;
+			pArray[j] = x;
     }
   	moveable();
    }
